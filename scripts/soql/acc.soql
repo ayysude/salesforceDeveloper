@@ -1,0 +1,10 @@
+select id, name from Account
+
+select id, name, phone from account where phone != ' '
+SELECT id, name, createdDate from account order by createdDate desc limit 3
+SELECT Id, Name, Description__c, Project_Name__c, Status__c FROM Salesforce_Project__c WHERE status__c != 'New'
+SELECT Id, Name, phone, accountnumber from account where phone != null and accountnumber != null
+SELECT Id, Name, phone, accountnumber from account where (phone != null or website != null) and accountnumber != null
+SELECT Id, Name, Subject__c, status__c, priority__c FROM salesforce_ticket__c WHERE status__c != '' and priority__c != 'high'
+SELECT Id, Name, Subject__c, status__c, priority__c FROM salesforce_ticket__c WHERE status__c != '' and priority__c in ('high', 'low')
+SELECT Id, Name, Subject__c, status__c, priority__c FROM salesforce_ticket__c WHERE status__c != '' and (priority__c ='high' or priority__c = 'low' orpriority__c = '' )
