@@ -10,3 +10,7 @@ DmlDemo.dmlUpdateDemo_3();
 DmlDemo.dmlInsertDemo_4();
 DmlDemo.dmlInsertDemo_5();
 //DmlDemo.dmlInsertMultiple_wrong();
+
+//list<acount> delAcc = [select id from accunt where name like '%B.0$'];
+//delete [select id from accunt where createdDate = THIS_WEEK];
+
