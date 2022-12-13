@@ -1,5 +1,73 @@
 trigger AccountTrigger on Account (before insert, before update, after insert, after update) {
     
+    if (Trigger.isBefore) {
+        AccountTriggerHandler.updateDescription(Trigger.New, Trigger.Old, Trigger.NewMap, Trigger.OldMap);
+    }
+
+    
+    /*
+    if (Trigger.isBefore) {
+        for (account eachAcc : Trigger.new) {
+            boolean updateDesc = false;
+            if (Trigger.isInsert && eachAcc.Active__c == 'Yes') {
+                //just update field
+                updateDesc = true;
+            }
+            //if account is updated.
+                //check if active field is changed from not yes to yes
+                //then update description
+            if (Trigger.isUpdate) {
+                //get old account using OldMAP
+                Account oldAccount = Trigger.OldMap.get(eachAcc.Id);
+                //get new account using newMap
+                Account newAccount = Trigger.NewMap.get(eachAcc.Id);
+                //oldAccount.Active__c != newAccount.Active__c
+                if (eachAcc.Active__c == 'Yes' &&
+                   oldAccount.Active__c != newAccount.Active__c ) {
+                    updateDesc = true;
+                }
+            }
+            if (updateDesc) {
+                eachAcc.Description = 'Account is now active. Enjoy buddy!!';
+            }
+        }
+    }
+    */
+    
+    
+    /*
+    if (trigger.isBefore) {
+       
+        for (Account eachAcc : Trigger.new) {
+            if (Trigger.isInsert && eachAcc.Active__c == 'Yes') {
+                //just update field
+                eachAcc.Description = 'Account is now active.!';
+            }
+            //if account is updated
+            //check if active field ischanged from not yes to yes 
+            //then update description
+            if (Trigger.isUpdate) {
+                //get old account using OldMap
+                Account oldAccount = accOldMap.get(eachAcc.Id);
+                //get new account using map
+                Account newAccount = Trigger.NewMap.get(eachAcc.Id);
+                //oldAccount.Active__c != newAccount.Active__c
+                if (eachAcc.Active__c == 'Yes' &&
+                 oldaccount.Active__c != newAccount.Actice__c ) {
+                    eachAcc.Description = 'Account is Now Active.';
+                }
+            }
+        }
+    }
+    */
+    
+    
+    
+    
+    
+    
+    
+    /*
     if (trigger.isAfter && trigger.isUpdate) {
         system.debug('after update trigger');
 
@@ -26,14 +94,7 @@ trigger AccountTrigger on Account (before insert, before update, after insert, a
         }
         system.debug('website updated for # of accounts => ' + countwebsite);
     }
-
-
-
-
-
-
-
-
+    */
 
 
     /*
